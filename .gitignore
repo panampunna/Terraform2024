@@ -2,7 +2,7 @@
 
 awscliv2.zip
 awscliv2.sig
-
+aws/*
 
 #################
 # Local .terraform directories
