@@ -3,12 +3,12 @@
 ####   terraform -version    |||  https://developer.hashicorp.com/terraform/install 
 terraform {
   ###  terraform version requirement
-  required_version = ">=1.7.5"  ##  ">=1.6.6"
+  required_version = ">=1.8.5"  ##  ">=1.7.5"
   #### terraform providers ( after terraform init ) || https://registry.terraform.io/providers/hashicorp/aws/latest/docs 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 5.43.0"    ### ">= 5.33.0"
+      version = ">= 5.53.0"    ## 5.43.0"  # ">= 5.33.0"
     }
   }
 }
@@ -60,7 +60,7 @@ module "module_cloudwatch_metric_alarm" {
 #######################
 
 ##export AWS_ACCESS_KEY_ID="AKIAQ2LXXXXXXXXXXXXXXXXXXXXXXXXX"
-##export AWS_SECRET_ACCESS_KEY="rJ6ZNt4qnPYbLUDEtR1XDl3LXXXXXXXXXXXXXX"
+##export AWS_SECRET_ACCESS_KEY="rJ6ZNt4qnLXXXXXXXXXXXXXX"
 ##export AWS_REGION="ap-south-1"
 
 
