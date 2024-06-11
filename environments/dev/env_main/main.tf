@@ -3,7 +3,7 @@
 ####   terraform -version    |||  https://developer.hashicorp.com/terraform/install 
 terraform {
   ###  terraform version requirement
-  required_version = ">=1.8.5"  ##  ">=1.7.5"
+  required_version = ">=1.7.5"  ##  ">=1.7.5"
   #### terraform providers ( after terraform init ) || https://registry.terraform.io/providers/hashicorp/aws/latest/docs 
   required_providers {
     aws = {
@@ -29,9 +29,9 @@ locals {
 }
 
 ###########################################
-
-module "module_cloudwatch_metric_alarm" {
-  source = "../../../modules/module_cloudwatch_metric_alarm"
+## https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret
+module "module_secretsmanager" {
+  source = "../../../modules/module_secretsmanager"
    ###   subnet_ids     = var.subnet_ids
    region          = var.region
    prefix          = var.prefix
@@ -40,7 +40,19 @@ module "module_cloudwatch_metric_alarm" {
   }
 
 
+#######################################################
 
+#####################################################
+#module "module_cloudwatch_metric_alarm" {
+#  source = "../../../modules/module_cloudwatch_metric_alarm"
+#   ###   subnet_ids     = var.subnet_ids
+#   region          = var.region
+#   prefix          = var.prefix
+#   project_tags    = var.project_tags
+#   environment     = var.environment
+#  }
+#
+#
 ################################################
 #########  https://registry.terraform.io/modules/terraform-aws-modules/ecr/aws/latest
 ####   Amazon Elastic Container Service
