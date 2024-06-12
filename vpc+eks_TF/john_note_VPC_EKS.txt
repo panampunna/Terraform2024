@@ -1,0 +1,48 @@
+
+https://developer.hashicorp.com/terraform/tutorials/kubernetes/eks
+
+
+
+
+ aws eks --region $(terraform output -raw region) update-kubeconfig \
+    --name $(terraform output -raw cluster_name)
+
+
+aws eks --region ap-south-1   update-kubeconfig --name  education-eks-GJ7M6gNn
+
+
+
+
+
+Outputs:
+
+cluster_endpoint = "https://97014CA6FA61E7832E5202B2C6F9766C.gr7.ap-south-1.eks.amazonaws.com"
+cluster_name = "education-eks-GJ7M6gNn"
+cluster_security_group_id = "sg-0f736857993657ccd"
+region = "ap-south-1"
+
+
+aws eks --region ap-south-1   update-kubeconfig --name  education-eks-GJ7M6gNn
+Added new context arn:aws:eks:ap-south-1:056621886287:cluster/education-eks-GJ7M6gNn to /home/john/.kube/config
+
+
+john@john-VirtualBox:/tmp/learn-terraform-provision-eks-cluster$ kubectl  get pods -A
+NAMESPACE     NAME                                READY   STATUS    RESTARTS   AGE
+kube-system   aws-node-g4qvc                      2/2     Running   0          4m55s
+kube-system   aws-node-lhv5z                      2/2     Running   0          5m11s
+kube-system   aws-node-lwvj4                      2/2     Running   0          4m55s
+kube-system   coredns-5d5f56f475-ckjct            1/1     Running   0          8m57s
+kube-system   coredns-5d5f56f475-lzmnm            1/1     Running   0          8m57s
+kube-system   ebs-csi-controller-d7c78bf8-kvv85   6/6     Running   0          4m3s
+kube-system   ebs-csi-controller-d7c78bf8-pjg9w   6/6     Running   0          4m3s
+kube-system   ebs-csi-node-6q48n                  3/3     Running   0          4m3s
+kube-system   ebs-csi-node-lkj7x                  3/3     Running   0          4m3s
+kube-system   ebs-csi-node-w8zzt                  3/3     Running   0          4m3s
+kube-system   kube-proxy-56scb                    1/1     Running   0          4m55s
+kube-system   kube-proxy-w792d                    1/1     Running   0          4m55s
+kube-system   kube-proxy-w9w5m                    1/1     Running   0          5m11s
+
+kubectl  get service
+
+kubectl  port-forward nginx-deployment-7747f5887-hj5pn 8080:80 
+

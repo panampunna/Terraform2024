@@ -1,4 +1,4 @@
-variable "vpc_id" {}
+##variable "vpc_id" {}
 
 variable "prefix" {}
 variable "environment" {}
@@ -6,45 +6,45 @@ variable "region" {}
 variable "project_tags" {}
 
 
-################## EC2 Start ############
-variable "ami" {}
-variable "instance_type" {}
-variable "private_key_path" {}
-################### EC2 End  #############
+################### EC2 Start ############
+#variable "ami" {}
+#variable "instance_type" {}
+#variable "private_key_path" {}
+#################### EC2 End  #############
 
 
 
-####################ECR  #####################
-variable "repository_name" {}
-
-##############EKS #########################
-variable "cluster_name" {}
-
-
-variable "control_plane_subnet_ids" {
-  default = []
-}
-
-variable "subnet_ids" {
-  default = []
-}
-
-variable "aws_auth_users" {
-  default = []
-}
-#############CodeBuild  Module STart################################
-variable "projectroot" {}
-##variable "sourcecode" {}
-
-###########
-variable "sourcecode" {
-  type = map(any)
-  # other configurations...
-}
-
-################CodeBuild  Module  END ####################
-
-#################################################
+#####################ECR  #####################
+#variable "repository_name" {}
+#
+###############EKS #########################
+#variable "cluster_name" {}
+#
+#
+#variable "control_plane_subnet_ids" {
+#  default = []
+#}
+#
+#variable "subnet_ids" {
+#  default = []
+#}
+#
+#variable "aws_auth_users" {
+#  default = []
+#}
+##############CodeBuild  Module STart################################
+#variable "projectroot" {}
+###variable "sourcecode" {}
+#
+############
+#variable "sourcecode" {
+#  type = map(any)
+#  # other configurations...
+#}
+#
+#################CodeBuild  Module  END ####################
+#
+##################################################
 #variable "cidr_map" {
 #  type = map(any)
 #
