@@ -3,12 +3,12 @@
 ####   terraform -version    |||  https://developer.hashicorp.com/terraform/install 
 terraform {
   ###  terraform version requirement
-  required_version = ">=1.7.5"  ##  ">=1.6.6"
+  required_version = ">=1.7.5" ##  ">=1.6.6"
   #### terraform providers ( after terraform init ) || https://registry.terraform.io/providers/hashicorp/aws/latest/docs 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 5.43.0"    ### ">= 5.33.0"
+      version = ">= 5.43.0" ### ">= 5.33.0"
     }
   }
 }
@@ -32,12 +32,12 @@ locals {
 
 module "module_cloudwatch_metric_alarm" {
   source = "../../../modules/module_cloudwatch_metric_alarm"
-   ###   subnet_ids     = var.subnet_ids
-   region          = var.region
-   prefix          = var.prefix
-   project_tags    = var.project_tags
-   environment     = var.environment
-  }
+  ###   subnet_ids     = var.subnet_ids
+  region       = var.region
+  prefix       = var.prefix
+  project_tags = var.project_tags
+  environment  = var.environment
+}
 
 
 

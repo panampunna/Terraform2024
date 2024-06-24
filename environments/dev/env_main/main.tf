@@ -3,12 +3,12 @@
 ####   terraform -version    |||  https://developer.hashicorp.com/terraform/install 
 terraform {
   ###  terraform version requirement
-  required_version = ">=1.7.5"  ##  ">=1.7.5"
+  required_version = ">=1.7.5" ##  ">=1.7.5"
   #### terraform providers ( after terraform init ) || https://registry.terraform.io/providers/hashicorp/aws/latest/docs 
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 5.53.0"    ## 5.43.0"  # ">= 5.33.0"
+      version = ">= 5.53.0" ## 5.43.0"  # ">= 5.33.0"
     }
   }
 }
@@ -32,12 +32,12 @@ locals {
 ## https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/secretsmanager_secret
 module "module_secretsmanager" {
   source = "../../../modules/module_secretsmanager"
-   ###   subnet_ids     = var.subnet_ids
-   region          = var.region
-   prefix          = var.prefix
-   project_tags    = var.project_tags
-   environment     = var.environment
-  }
+  ###   subnet_ids     = var.subnet_ids
+  region       = var.region
+  prefix       = var.prefix
+  project_tags = var.project_tags
+  environment  = var.environment
+}
 
 
 #######################################################

@@ -2,18 +2,18 @@
 terraform {
   # terraform version requirement
   required_version = ">=1.7.5"
- #### terraform providers ( after terraform init ) || https://registry.terraform.io/providers/hashicorp/aws/latest/docs
-   required_providers {
+  #### terraform providers ( after terraform init ) || https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+  required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 5.43.0"   
+      version = ">= 5.43.0"
     }
   }
 
   backend "s3" {
     bucket         = "client-allianz-dev-eu-central-1-terraform-remote-state"
     key            = "_backend/terraform.tfstate"
-    region         =  "ap-south-1"  ### 
+    region         = "ap-south-1" ### 
     dynamodb_table = "client-allianz-dev-eu-central-1-dynamodb-locks"
     encrypt        = true
   }
